@@ -3,7 +3,6 @@ import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
 
-
 public class Ejercicio5 {
     public static void main(String[] args) {
         List<Alumno> alumnos = List.of(
@@ -18,7 +17,6 @@ public class Ejercicio5 {
             .collect(Collectors.toMap(alumno -> alumno.getNombre().concat(" ")
             .concat(alumno.getApellido()),
             alumno -> calcularEdad(alumno.getFechaDeNacimiento())));
-
 
         alumnosEdad.entrySet().stream().forEach(e-> System.out.println(e));
     }
