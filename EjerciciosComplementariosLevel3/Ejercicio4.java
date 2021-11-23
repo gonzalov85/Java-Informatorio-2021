@@ -8,8 +8,6 @@ public class Ejercicio4 {
         Set<Integer> palabrasSinRepetir = palabras.stream()
                 .collect(Collectors.toSet());
 
-        System.out.println(palabrasSinRepetir);
-
         Set<Integer> palabrasFactorial = palabrasSinRepetir.stream()
                 .map(palabra-> Ejercicio4.calcularFactorial(palabra))
                 .collect(Collectors.toSet());
