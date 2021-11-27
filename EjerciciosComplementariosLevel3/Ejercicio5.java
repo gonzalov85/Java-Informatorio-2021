@@ -35,7 +35,6 @@ public class Ejercicio5 {
             this.apellido = apellido;
             this.nombre = nombre;
             this.fechaDeNacimiento = fechaDeNacimiento;
-
         }
 
         public String getApellido(){
