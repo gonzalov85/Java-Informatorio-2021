@@ -1,5 +1,6 @@
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,16 +14,16 @@ public class Ejercicio5 {
             new Alumno("Patiño", "Bob", LocalDate.of(1965,4,22)),
             new Alumno("Flanders", "Ned", LocalDate.of(1955,10,2)));
 
-        Map<String, Integer> alumnosEdad = alumnos.stream()
+            Map<String, Integer> alumnosEdad = alumnos.stream()
             .collect(Collectors.toMap(alumno -> alumno.getNombre().concat(" ")
             .concat(alumno.getApellido()),
-            alumno -> calcularEdad(alumno.getFechaDeNacimiento())));
+            alumno -> calcularEdad(alumno)));
 
-        alumnosEdad.entrySet().stream().forEach(e-> System.out.println(e));
+        System.out.println(alumnosEdad);
     }
 
-    private static Integer calcularEdad(LocalDate edad){
-        return 2021 - edad.getYear();
+    private static Integer calcularEdad(Alumno alumno){
+        return Period.between(alumno.getFechaDeNacimiento(), LocalDate.now()).getYears();
     }
 
     static class Alumno {
